@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekty - [Imię i nazwisko]</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Powrót do strony głównej</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Moje projekty</h1>
+  <main>
+    <section>
+      <h2>Projekt 1</h2>
+      <p>Metoda siecznych w Julii</p>
+      <pre class="code-block">
+        <code>
+          // Kod źródłowy z projektu 1
+          
+function msiecznych(f, x0::Float64, x1::Float64, delta::Float64, epsilon::Float64, maxit::Int)
+local r::Float64 
+local v::Float64
+local u::Float64 
+local w::Float64 
+local it::Int 
+local err::Int 
+local s::Float64 
+r = x0
+u = x1
+v = f(r)
+w = f(u)
+it = 0
+err = 0
+for it in 1:maxit
+    if abs(v) > abs(w)
+        #cukier syntaxyczny 
+        r,v,u,w = u,w,r,v
+      
+    end
+    s = (u - r) / (w - v)
+    u,w = r,v
+    r = r - v * s
+    v = f(r)
+    if abs(u - r) < delta || abs(v) < epsilon 
+        return (r, v, it, err)
+    end
+end
+if abs(v) > epsilon && abs(u - r) > delta
+    err = 1
+end
+return (r, v, it, err)
+end
+        </code>
+      </pre>
+      <a href="https://github.com/BTkachenko/ON/blob/master/lab3/zad3.jl">Link do projektu 1 na GitHubie</a>
+    </section>
+
+    <section>
+      <h2>Projekt 2</h2>
+      <p>RSA with CTR in JAVA</p>
+      <pre class="code-block">
+        <code>
+          public class Zad2b {
+            public static BigInteger decryptionCRT(BigInteger c, BigInteger p, BigInteger q, BigInteger dp, BigInteger dq, BigInteger qInv)
+            {
+                BigInteger result;
+                BigInteger m1 = c.modPow(dp,p);
+                BigInteger m2 = c.modPow(dq,q);
+                BigInteger h = qInv.multiply((m1.subtract(m2))).mod(p);
+                result = m2.add(h.multiply(q));
+                return result;
+            }
+        
+            public static void main(String[] args) {
+                 if (args.length == 6)
+                {
+                    BigInteger c = new BigInteger(args[0]);
+                    BigInteger p= new BigInteger(args[1]);
+                    BigInteger q= new BigInteger(args[2]);
+                    BigInteger dp= new BigInteger(args[3]);
+                    BigInteger dq= new BigInteger(args[4]);
+                    BigInteger qInv= new BigInteger(args[5]);
+                    System.out.println(decryptionCRT(c,p,q,dp,dq,qInv));
+                }
+                else
+                {System.out.println("Wrong number of arguments!");
+                    System.exit(-1);}
+            }
+        }
+        </code>
+      </pre>
+      <a href="https://github.com/BTkachenko/CryptoPwr/blob/master/Lab1(RSA)/Zad2b%201.java">Link do projektu 2 na GitHubie</a>
+    </section>
+
+    <section>
+      <h2>Projekt 3</h2>
+      <p>Cha-Cha20 in JAVA</p>
+      <pre class="code-block">
+        <code>
+          public class ChaCha20Enc
+{
+    private static SecretKey getKey(String name) throws NoSuchAlgorithmException, IOException {
+
+
+        byte a[] = name.getBytes();
+        byte b[] = new byte[32-a.length];
+        for (byte by: b
+             ) {
+            by = (byte) 0x000000FF;
+        }
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream( );
+        outputStream.write( a );
+        outputStream.write( b );
+
+        byte c[] = outputStream.toByteArray( );
+
+        SecretKey secretKey = new SecretKeySpec(c, "ChaCha20");
+        return  secretKey;
+    }
+
+    // 96-bit nonce (12 bytes)
+    private static byte[] getNonce() {
+        byte[] newNonce = new byte[12];
+        for (byte b: newNonce) {
+            b = (byte) 0x000000FF;
+        }
+        return newNonce;
+    }
+        </code>
+      </pre>
+      <a href="https://github.com/BTkachenko/CryptoPwr/blob/master/Chacha%20crypto/chacha.java">Link do projektu 3 na GitHubie</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 [Imię i nazwisko]</p>
+  </footer>
+
+</body>
+</html>

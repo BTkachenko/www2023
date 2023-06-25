@@ -1,0 +1,89 @@
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+nav ul li {
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+nav ul li a {
+  color: #6c757d;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+nav ul li a:hover {
+  color: #007bff;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main section {
+  flex-basis: calc(33.33% - 1rem);
+  margin-bottom: 2rem;
+}
+main section h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+main section ul {
+  margin-bottom: 1rem;
+}
+main section ul li {
+  margin-bottom: 0.5rem;
+}
+main section ul li a {
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+main section ul li a:hover {
+  color: #3395ff;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.card {
+  margin-bottom: 2rem;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+.card p {
+  margin-bottom: 1rem;
+}
+.card a {
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+.card a:hover {
+  color: #3395ff;
+}/*# sourceMappingURL=style.css.map */

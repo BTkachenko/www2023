@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notatki</title>
+    <link rel="stylesheet" href="style.css">
+    <nav>
+        <button id="logoutButton">Wyloguj się</button>
+    </nav>
+</head>
+
+<body>
+    <h1>Notatki</h1>
+    <div id="loginForm">
+        <input type="email" id="email" placeholder="Email" />
+        <input type="password" id="password" placeholder="Hasło" />
+        <button id="loginButton">Zaloguj</button>
+        <button id="registerButton">Zarejestruj</button>
+    </div>
+    <div id="notesApp" style="display:none;">
+        <input type="text" id="noteTitle" placeholder="Tytuł notatki" />
+        <textarea id="noteContent" placeholder="Treść notatki"></textarea>
+        <button id="saveButton">Zapisz notatkę</button>
+        <div id="notesList"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src ="scripts.js"></script>
+</body>
+
+</html>

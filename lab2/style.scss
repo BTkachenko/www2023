@@ -1,0 +1,112 @@
+// Zmienne
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$border-radius: 5px;
+
+// Funkcje
+@function lighten($color, $amount) {
+  @return mix(white, $color, $amount);
+}
+
+// Domieszki
+@mixin button-style($color) {
+  background-color: $color;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: $border-radius;
+  &:hover {
+    background-color: lighten($color, 20%);
+  }
+}
+
+// Zagnieżdżenie selektorów
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: 768px) {
+      flex-direction: column;
+    }
+    li {
+      margin-right: 1rem;
+      margin-bottom: 0;
+      @media screen and (min-width: 768px) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      a {
+        color: $secondary-color;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  section {
+    flex-basis: calc(33.33% - 1rem);
+    margin-bottom: 2rem;
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    ul {
+      margin-bottom: 1rem;
+      li {
+        margin-bottom: 0.5rem;
+        a {
+          color: $primary-color;
+          transition: all 0.3s ease;
+          &:hover {
+            color: lighten($primary-color, 20%);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Rozszerzenia
+%card-style {
+  border-radius: $border-radius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.card {
+  @extend %card-style;
+  margin-bottom: 2rem;
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  a {
+    color: $primary-color;
+    transition: all 0.3s ease;
+    &:hover {
+      color: lighten($primary-color, 20%);
+    }
+  }
+}
+

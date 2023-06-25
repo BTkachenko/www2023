@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  canvas {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  #inputWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  #inputLetter {
+    font-size: 18px;
+    width: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #submitLetter, #reset {
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+  
+  @media screen and (min-width: 480px) {
+    body {
+      padding: 40px;
+    }
+  
+    canvas {
+      margin-bottom: 40px;
+    }
+  
+    #inputLetter {
+      margin-right: 10px;
+      margin-bottom: 0;
+    }
+  
+    #submitLetter, #reset {
+      margin-bottom: 20px;
+    }
+  }
+  
